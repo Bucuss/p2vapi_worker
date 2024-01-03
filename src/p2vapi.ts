@@ -3,7 +3,6 @@ export interface Env {
 	R2buket: R2Bucket;
 	BASE_URL: string;
 	PROXY_API_PREFIX: string;
-	KEY_FOR_GPTS_INFO: string;
 	R2_DOMAIN:string;
 
 }
