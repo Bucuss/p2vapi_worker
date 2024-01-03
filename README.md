@@ -3,7 +3,9 @@
 
 ## 项目概览
 
-此项目为 [PandoraToV1Api](https://github.com/Ink-Osier/PandoraToV1Api) 的 Cloudflare Workers 简化版本，旨在利用 Cloudflare 的资源，提供便捷的部署方式和快速的响应速度。项目的核心目标是将 Pandora-Next proxy 模式下的 `backend-api` 转换为 `/v1/chat/completions` 接口，支持流式和非流式响应，从而方便支持原生 OpenAI `/v1/chat/completions` 接口的项目体验多模态的 GPT-4。
+此项目为 [PandoraToV1Api](https://github.com/Ink-Osier/PandoraToV1Api) 的 Cloudflare Workers 简化版本，旨在利用 Cloudflare 的资源，提供便捷的部署方式和快速的响应速度。项目的核心目标是将 [Pandora-Next](https://github.com/pandora-next/deploy) proxy 模式下的 `backend-api` 转换为 `/v1/chat/completions` 接口，支持流式和非流式响应，从而方便支持原生 OpenAI `/v1/chat/completions` 接口的项目体验多模态的 GPT-4。
+
+#### ※出于学习目的迁移了[PandoraToV1Api](https://github.com/Ink-Osier/PandoraToV1Api) 大佬的代码，只实现了基础功能，需要体验全部功能移步[PandoraToV1Api](https://github.com/Ink-Osier/PandoraToV1Api) 
 
 ## 支持功能
 
