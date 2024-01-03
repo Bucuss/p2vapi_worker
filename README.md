@@ -84,6 +84,7 @@
 ![image](https://github.com/palafin02back/p2vapi_worker/assets/155502697/6bd7c68f-38c0-44b0-951f-0e1867612eed)
 ![image](https://github.com/palafin02back/p2vapi_worker/assets/155502697/d6814a42-9c1c-4c9d-b5c0-ee57bbc106e4)
 
+`power by chatgpt`
 
 
 
