@@ -1,17 +1,294 @@
 //环境变量
 export interface Env {
-	R2buket: R2Bucket;
-	BASE_URL: string;
-	PROXY_API_PREFIX: string;
-	R2_DOMAIN:string;
+    R2buket: R2Bucket;
+    BASE_URL: string;
+    PROXY_API_PREFIX: string;
+    R2_DOMAIN: string;
 
 }
-//模型映射
+
 const MODEL_List = {
     "gpt-4": "gpt-4",
+    "gpt-4-0613": "gpt-4",
     "gpt-4-32k": "gpt-4-mobile",
     "gpt-3.5-turbo": "text-davinci-002-render-sha"
 
+}
+
+const fakemodelist = {
+    "object": "list",
+    "data": [
+        {
+            "id": "gpt-4-0613",
+            "object": "model",
+            "created": 1686588896,
+            "owned_by": "openai"
+        },
+        {
+            "id": "gpt-4-mobile",
+            "object": "model",
+            "created": 1686588896,
+            "owned_by": "openai"
+        },
+        {
+            "id": "curie-search-query",
+            "object": "model",
+            "created": 1651172509,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "gpt-4",
+            "object": "model",
+            "created": 1687882411,
+            "owned_by": "openai"
+        },
+        {
+            "id": "dall-e-3",
+            "object": "model",
+            "created": 1698785189,
+            "owned_by": "system"
+        },
+        {
+            "id": "babbage",
+            "object": "model",
+            "created": 1649358449,
+            "owned_by": "openai"
+        },
+        {
+            "id": "babbage-search-query",
+            "object": "model",
+            "created": 1651172509,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "davinci-similarity",
+            "object": "model",
+            "created": 1651172509,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "curie-similarity",
+            "object": "model",
+            "created": 1651172510,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "babbage-search-document",
+            "object": "model",
+            "created": 1651172510,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "dall-e-2",
+            "object": "model",
+            "created": 1698798177,
+            "owned_by": "system"
+        },
+        {
+            "id": "gpt-3.5-turbo-0301",
+            "object": "model",
+            "created": 1677649963,
+            "owned_by": "openai"
+        },
+        {
+            "id": "gpt-3.5-turbo-16k-0613",
+            "object": "model",
+            "created": 1685474247,
+            "owned_by": "openai"
+        },
+        {
+            "id": "babbage-similarity",
+            "object": "model",
+            "created": 1651172505,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "text-embedding-ada-002",
+            "object": "model",
+            "created": 1671217299,
+            "owned_by": "openai-internal"
+        },
+        {
+            "id": "davinci-search-query",
+            "object": "model",
+            "created": 1651172505,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "gpt-3.5-turbo-instruct",
+            "object": "model",
+            "created": 1692901427,
+            "owned_by": "system"
+        },
+        {
+            "id": "gpt-3.5-turbo-16k",
+            "object": "model",
+            "created": 1683758102,
+            "owned_by": "openai-internal"
+        },
+        {
+            "id": "ada-search-document",
+            "object": "model",
+            "created": 1651172507,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "gpt-3.5-turbo-0613",
+            "object": "model",
+            "created": 1686587434,
+            "owned_by": "openai"
+        },
+        {
+            "id": "ada-code-search-code",
+            "object": "model",
+            "created": 1651172505,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "davinci-002",
+            "object": "model",
+            "created": 1692634301,
+            "owned_by": "system"
+        },
+        {
+            "id": "gpt-3.5-turbo-instruct-0914",
+            "object": "model",
+            "created": 1694122472,
+            "owned_by": "system"
+        },
+        {
+            "id": "babbage-002",
+            "object": "model",
+            "created": 1692634615,
+            "owned_by": "system"
+        },
+        {
+            "id": "gpt-4-vision-preview",
+            "object": "model",
+            "created": 1698894917,
+            "owned_by": "system"
+        },
+        {
+            "id": "davinci-search-document",
+            "object": "model",
+            "created": 1651172509,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "curie-search-document",
+            "object": "model",
+            "created": 1651172508,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "babbage-code-search-code",
+            "object": "model",
+            "created": 1651172509,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "gpt-3.5-turbo",
+            "object": "model",
+            "created": 1677610602,
+            "owned_by": "openai"
+        },
+        {
+            "id": "babbage-code-search-text",
+            "object": "model",
+            "created": 1651172509,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "ada-search-query",
+            "object": "model",
+            "created": 1651172505,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "ada-code-search-text",
+            "object": "model",
+            "created": 1651172510,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "tts-1-hd",
+            "object": "model",
+            "created": 1699046015,
+            "owned_by": "system"
+        },
+        {
+            "id": "whisper-1",
+            "object": "model",
+            "created": 1677532384,
+            "owned_by": "openai-internal"
+        },
+        {
+            "id": "ada",
+            "object": "model",
+            "created": 1649357491,
+            "owned_by": "openai"
+        },
+        {
+            "id": "ada-similarity",
+            "object": "model",
+            "created": 1651172507,
+            "owned_by": "openai-dev"
+        },
+        {
+            "id": "gpt-4-1106-preview",
+            "object": "model",
+            "created": 1698957206,
+            "owned_by": "system"
+        },
+        {
+            "id": "gpt-3.5-turbo-1106",
+            "object": "model",
+            "created": 1698959748,
+            "owned_by": "system"
+        },
+        {
+            "id": "curie",
+            "object": "model",
+            "created": 1649359874,
+            "owned_by": "openai"
+        },
+        {
+            "id": "tts-1",
+            "object": "model",
+            "created": 1681940951,
+            "owned_by": "openai-internal"
+        },
+        {
+            "id": "davinci",
+            "object": "model",
+            "created": 1649359874,
+            "owned_by": "openai"
+        },
+        {
+            "id": "gpt-4-0314",
+            "object": "model",
+            "created": 1687882410,
+            "owned_by": "openai"
+        },
+        {
+            "id": "tts-1-1106",
+            "object": "model",
+            "created": 1699053241,
+            "owned_by": "system"
+        },
+        {
+            "id": "tts-1-hd-1106",
+            "object": "model",
+            "created": 1699053533,
+            "owned_by": "system"
+        },
+        {
+            "id": "ft:gpt-3.5-turbo-0613:aiteam::7vzIn4wC",
+            "object": "model",
+            "created": 1694054697,
+            "owned_by": "aiteam-ihwwba"
+        }
+    ]
 }
 let all_New_Text = ""; //累计流式响应内容
 
@@ -26,25 +303,28 @@ export default {
             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type,Authorization,X-Requested-With'
         };
-        
-        
+
+
         if (method === 'OPTIONS') {
-            response =  new Response('OK', { headers:headers , status: 200 });
+            response = new Response('OK', { headers: headers, status: 200 });
             return response;
         }
 
         // 路由处理
         switch (path) {
             case '/image/upload':
-                response = method === 'PUT' ? await handleR2request(request,env) : methodNotAllowed();
+                response = method === 'PUT' ? await handleR2request(request, env) : methodNotAllowed();
                 break;
             case '/v1/chat/completions':
-                response = method === 'POST' ? await handleChatCompletions(request,env) : methodNotAllowed();
+                response = method === 'POST' ? await handleChatCompletions(request, env) : methodNotAllowed();
+                break;
+            case '/v1/models':
+                response = await handleModels();
                 break;
             default:
                 response = notFoundResponse();
         }
-        
+
         response = new Response(response.body, response);
         //添加跨域头
         Object.keys(headers).forEach(key => {
@@ -86,23 +366,23 @@ function generatePayload(model: string, formattedMessages: any[]) {
 
 
 //下载并保存图片到R2
-async function downloadAndSaveImage(image_url:string, headers:any,env:Env) {
+async function downloadAndSaveImage(image_url: string, headers: any, env: Env) {
     //请求上传图片
-    async function handleR2putimage(data: any,env:Env){
+    async function handleR2putimage(data: any, env: Env) {
         const dir = "image/"
-        const currentDate  = Math.floor(Date.now() / 1000)
-        const objectName = dir+currentDate
+        const currentDate = Math.floor(Date.now() / 1000)
+        const objectName = dir + currentDate
         const data_headers = {}
-            const object = await env.R2buket.put(objectName, data, {
-                httpMetadata: data_headers,
-            })
-            console.log(`object: ${JSON.stringify(object)}`)
-            const imageurl = `${env.R2_DOMAIN}/${objectName}`
-            return new Response(imageurl, {
-                headers: {
-                    'Content-Type': 'text/plain',
-                }
-            })
+        const object = await env.R2buket.put(objectName, data, {
+            httpMetadata: data_headers,
+        })
+        console.log(`object: ${JSON.stringify(object)}`)
+        const imageurl = `${env.R2_DOMAIN}/${objectName}`
+        return new Response(imageurl, {
+            headers: {
+                'Content-Type': 'text/plain',
+            }
+        })
     }
     // 请求图片下载地址
     try {
@@ -111,7 +391,7 @@ async function downloadAndSaveImage(image_url:string, headers:any,env:Env) {
             throw new Error(`get image download url fail: ${response.statusText}`);
         }
 
-        const data:any= await response.json();
+        const data: any = await response.json();
         const download_url = data.download_url;
         console.log(`download_url: ${download_url}`);
 
@@ -123,7 +403,7 @@ async function downloadAndSaveImage(image_url:string, headers:any,env:Env) {
         console.log('download success');
         const blob = await downloadResponse.blob();
 
-        const saveResponse = await handleR2putimage(blob,env);
+        const saveResponse = await handleR2putimage(blob, env);
         if (!saveResponse.ok) {
             throw new Error('Network response was not ok');
         }
@@ -160,7 +440,7 @@ function replaceCompleteCitation(text: string, citations: any[]): [string, strin
     if (match) {
         const citationNumber = parseInt(match[1]);
         const citation = citations.find(c => c.metadata?.extra?.cited_message_idx === citationNumber);
-        
+
         if (citation) {
             const url = citation.metadata?.url || "";
             replacedText = text.replace(regexCitation, `[[${citationNumber}](${url})]`);
@@ -178,7 +458,7 @@ function replaceCompleteCitation(text: string, citations: any[]): [string, strin
 
 
 
-async function* processResponse(env:Env,messages: any, response: any, apikey: string): AsyncIterableIterator<string> {
+async function* processResponse(env: Env, messages: any, response: any, apikey: string): AsyncIterableIterator<string> {
 
     const reader = response.body.getReader();
     let buffer = '';
@@ -193,7 +473,7 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
     let citation_accumulating = false; // 用于标记是否正在积累引用内容
     let full_text = ""; // 用于记录所有parts中出现的文本
 
-    
+
     //每轮buffer内部的处理逻辑
     while (true) {
         const { done, value } = await reader.read();
@@ -205,14 +485,14 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
         //console.log(`Received data chunk of size: ${value.length}`);
         //console.log(`Received data chunk : ${buffer}`);
         //处理多data:标签问题
-        buffer = buffer.includes('data:') ? "data:"+buffer.split('data:').slice(-1)[0]  : buffer;
+        buffer = buffer.includes('data:') ? "data:" + buffer.split('data:').slice(-1)[0] : buffer;
         //console.log(`Received after data chunk : ${buffer}`);
-       // console.log(`after buffer: ${buffer}`)
+        // console.log(`after buffer: ${buffer}`)
         while (buffer.includes('data:') && buffer.includes('\n\n')) {
             const end_index = buffer.indexOf('\n\n') + 2;
             const complete_data = buffer.substring(0, end_index);
             buffer = buffer.substring(end_index);
-            
+
 
             try {
                 const data_json = JSON.parse(complete_data.replace('data: ', ''));
@@ -234,8 +514,8 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                 if ((role === "user" || role === "system") || (message_status === "finished_successfully" && role !== "tool")) {
                     continue;
                 }
-                
-                
+
+
                 //单独处理图片消息，获取图片url
                 for (const part of parts) {
                     //console.log(`content part: ${JSON.stringify(part)}`);
@@ -247,15 +527,15 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                         const headers = {
                             "Authorization": `Bearer ${apikey}`
                         };
-                        const savedImageUrl = await downloadAndSaveImage(image_url, headers,env);
-                        if (last_content_type === "code"&&content_type!==undefined) {
-                        	new_text = "\n```\n"+`\n![image](${savedImageUrl})\n[DownloadLink](${savedImageUrl})\n`;
-                            
-                        }else{
+                        const savedImageUrl = await downloadAndSaveImage(image_url, headers, env);
+                        if (last_content_type === "code" && content_type !== undefined) {
+                            new_text = "\n```\n" + `\n![image](${savedImageUrl})\n[DownloadLink](${savedImageUrl})\n`;
+
+                        } else {
                             new_text = `\n![image](${savedImageUrl})\n[DownloadLink](${savedImageUrl})\n`;
                         }
-                        
-                        
+
+
                         console.log(`imagetext:new_text: ${new_text};last_content_type: ${last_content_type};content_type: ${content_type}`)
                     }
 
@@ -270,12 +550,12 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                         console.log(`multimodal_text:new_text: ${new_text};last_content_type: ${last_content_type};content_type: ${content_type}`);
                     }
                     else if (role === "tool" && name === "dalle.text2im") {
-                        
+
                         continue;
                     }
-                    
+
                     // 处理代码块
-                    if (content_type === "code" && last_content_type !== "code" &&last_content_type !== null) {
+                    if (content_type === "code" && last_content_type !== "code" && last_content_type !== null) {
                         const full_code = (content?.text || "");
                         const language = (content?.language && content.language !== "unknown") ? content.language : "shell";
                         //可能重复解析
@@ -284,10 +564,10 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                         last_full_code = full_code; // 代码开始输出
                     }
 
-                    else if (content_type !== "code" && last_content_type === "code"&& content_type !== null) {
+                    else if (content_type !== "code" && last_content_type === "code" && content_type !== null) {
                         const full_code = (content?.text || "");
-                        if(last_full_code!==""){
-                            new_text = "\n```\n" +full_code.substring(last_full_code.length)
+                        if (last_full_code !== "") {
+                            new_text = "\n```\n" + full_code.substring(last_full_code.length)
                         }
                         console.log(`code:new_text: ${new_text};last_content_type: ${last_content_type};content_type: ${content_type}`);
                         last_full_code = ""; // 代码输出结束
@@ -296,7 +576,7 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                     else if (content_type === "code" && last_content_type === "code") {
                         const full_code = (content?.text || "");
                         new_text = full_code.substring(last_full_code.length);
-                       // console.log(`code:new_text: ${new_text};last_content_type: ${last_content_type};content_type: ${content_type}`);
+                        // console.log(`code:new_text: ${new_text};last_content_type: ${last_content_type};content_type: ${content_type}`);
                         last_full_code = full_code; // 代码输出中
                     }
 
@@ -329,8 +609,8 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                                     let [replacedText, remainingText, isPotentialCitation] = replaceCompleteCitation(citation_buffer, citations);
                                     // console.log(replacedText);  // 输出替换后的文本
                                     new_text = replacedText;
-                                    
-                                    if(isPotentialCitation) {
+
+                                    if (isPotentialCitation) {
                                         citation_buffer = remainingText;
                                     } else {
                                         citation_accumulating = false;
@@ -349,33 +629,33 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                             }
                         }
 
-                        
+
 
                     }
                     //处理代码解释器内容
-                    if(role === "tool" && name === "python" && last_content_type !== "execution_output" && content_type !== null){
+                    if (role === "tool" && name === "python" && last_content_type !== "execution_output" && content_type !== null) {
                         const full_code_result = (content?.text || "");
                         new_text = full_code_result.substring(last_full_code_result.length);
-                        if(last_content_type==="code"){
-                            new_text =  new_text+"\n```\n"+"`Result:`\n\n"+"```\n"
+                        if (last_content_type === "code") {
+                            new_text = new_text + "\n```\n" + "`Result:`\n\n" + "```\n"
                         }
                         console.log(`text:new_text: ${new_text};last_content_type: ${last_content_type};content_type: ${content_type}`);
-                        last_full_code_result = full_code_result 
+                        last_full_code_result = full_code_result
                     }
-                    else if (last_content_type === "execution_output" && (role !== "tool" && name !== "python") && content_type !==null) {
+                    else if (last_content_type === "execution_output" && (role !== "tool" && name !== "python") && content_type !== null) {
                         const full_code_result = (content?.text || "");
                         new_text = full_code_result.substring(last_full_code_result.length)
-                        if(content_type==="text"){
-                            new_text = "\n```\n"+new_text
+                        if (content_type === "text") {
+                            new_text = "\n```\n" + new_text
                         }
                         console.log(`text:new_text: ${new_text};last_content_type: ${last_content_type};content_type: ${content_type}`);
                         last_full_code_result = ""
                     }
-                    else if (last_content_type === "execution_output" && role === "tool" && name === "python" && content_type !==null) {
+                    else if (last_content_type === "execution_output" && role === "tool" && name === "python" && content_type !== null) {
                         const full_code_result = (content?.text || "");
                         new_text = full_code_result.substring(last_full_code_result.length)
-                        if(message.status==="finished_successfully"){
-                            new_text = new_text+"\n```\n"
+                        if (message.status === "finished_successfully") {
+                            new_text = new_text + "\n```\n"
                         }
                         console.log(`text:new_text: ${new_text};last_content_type: ${last_content_type};content_type: ${content_type}`);
                         last_full_code_result = full_code_result
@@ -392,13 +672,15 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                     object: "chat.completion.chunk",
                     created: timestamp,
                     model: message.metadata?.model_slug,
+                    system_fingerprint: null,
                     choices: [
                         {
                             index: 0,
                             delta: {
                                 content: new_text
                             },
-                            finish_reason: null
+                            finish_reason: null,
+
                         }
                     ]
                 };
@@ -411,7 +693,24 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
 
             } catch (error) {
                 if (complete_data === 'data: [DONE]\n\n') {
-                    yield complete_data
+                    const newData = {
+                        id: chat_message_id,
+                        object: "chat.completion.chunk",
+                        created: timestamp,
+                        model: "gpt-4",
+                        system_fingerprint: null,
+                        choices: [
+                            {
+                                index: 0,
+                                delta: {},
+                                finish_reason: "stop",
+
+                            }
+                        ]
+                    };
+                    const tmp = `data: ${JSON.stringify(newData)}\n\n`;
+                    yield tmp;
+                    yield complete_data;
                     break;
                 }
             }
@@ -422,20 +721,21 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
     }
 
     console.log(`citation_buffer: ${citation_buffer}`);
-    
+
     if (citation_buffer !== "") {
         const newData = {
             id: chat_message_id,
             object: "chat.completion.chunk",
             created: timestamp,
             model: messages.metadata?.model_slug,
+            system_fingerprint: null,
             choices: [
                 {
                     index: 0,
                     delta: {
                         content: citation_buffer
                     },
-                    finish_reason: null
+                    finish_reason: null,
                 }
             ]
         };
@@ -445,7 +745,7 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
     }
     if (buffer) {
         try {
-            await deleteConversation(env,conversation_id, apikey);
+            await deleteConversation(env, conversation_id, apikey);
             let bufferJson = JSON.parse(buffer);
             const errorMessage = bufferJson.detail?.message || "unknown error";
 
@@ -460,9 +760,10 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
                         delta: {
                             content: `"""\n${errorMessage}\n"""` // 使用模板字符串来处理多行字符串
                         },
-                        finish_reason: null
+                        finish_reason: null,
+
                     }
-                ]
+                ],
             };
 
             const tmp = `data: ${JSON.stringify(errorData)}\n\n`;
@@ -470,18 +771,18 @@ async function* processResponse(env:Env,messages: any, response: any, apikey: st
             yield tmp
         } catch (error) {
 
-            await deleteConversation(env,conversation_id, apikey);
+            await deleteConversation(env, conversation_id, apikey);
         }
     }
     console.log(`conversation id ${conversation_id}`);
-    if(conversation_id!==""){   
-        await deleteConversation(env,conversation_id, apikey);
+    if (conversation_id !== "") {
+        await deleteConversation(env, conversation_id, apikey);
     }
-    
+
 }
 
 
-async function sendTextPromptAndGetResponse(env:Env,messages: any[], apiKey: string, model: string){
+async function sendTextPromptAndGetResponse(env: Env, messages: any[], apiKey: string, model: string) {
     const url = `${env.BASE_URL}/${env.PROXY_API_PREFIX}/backend-api/conversation`;
     const headers = {
         "Authorization": `Bearer ${apiKey}`,
@@ -492,7 +793,7 @@ async function sendTextPromptAndGetResponse(env:Env,messages: any[], apiKey: str
         id: crypto.randomUUID(),  // 使用 JavaScript 的 crypto API 生成 UUID
         author: { role: message.role },
         content: { content_type: "text", parts: [message.content] },
-        metadata: {} 
+        metadata: {}  // Add an empty object as the value for the metadata property
     }));
 
     console.log(`formattedMessages: ${JSON.stringify(formattedMessages)}`);
@@ -515,12 +816,12 @@ async function sendTextPromptAndGetResponse(env:Env,messages: any[], apiKey: str
         body: JSON.stringify(payload),
     });
 
-    
+
     return response;
 
 }
 
-async function deleteConversation(env:Env,conversationId: string, apiKey: string): Promise<Response>{
+async function deleteConversation(env: Env, conversationId: string, apiKey: string): Promise<Response> {
     const currentDate = new Date().toISOString();
     console.log(`[${currentDate}] delete conversationId ${conversationId}`);
     if (conversationId) {
@@ -565,10 +866,10 @@ function notFoundResponse() {
 }
 
 // 具体端点处理逻辑
-async function handleR2request(request: any,env:Env){
+async function handleR2request(request: any, env: Env) {
     const dir = "image/"
-    const currentDate  = Math.floor(Date.now() / 1000)
-    const objectName = dir+currentDate
+    const currentDate = Math.floor(Date.now() / 1000)
+    const objectName = dir + currentDate
 
     //保存图片
     if (request.method === 'PUT' || request.method == 'POST') {
@@ -591,7 +892,7 @@ async function handleR2request(request: any,env:Env){
 
 }
 
-async function handleChatCompletions(request: any,env:Env) {
+async function handleChatCompletions(request: any, env: Env) {
     // 只允许 POST 方法
     if (request.method !== 'POST') {
         return new Response('Method Not Allowed', { status: 405 })
@@ -605,6 +906,7 @@ async function handleChatCompletions(request: any,env:Env) {
     }
 
     const stream = data.stream;
+    // const stream  = false;
     console.log(`stream: ${stream}`)
     // 检查授权头
     const authHeader = request.headers.get('authorization');
@@ -613,16 +915,16 @@ async function handleChatCompletions(request: any,env:Env) {
     }
     const apiKey = authHeader.split(' ')[1];
     //sendTextPromptAndGetResponse和processResponse并行处理 一边拿返回数据一边处理
-    const upstreamResponse = await sendTextPromptAndGetResponse(env,messages, apiKey, model)
+    const upstreamResponse = await sendTextPromptAndGetResponse(env, messages, apiKey, model)
 
-    //流式响应
+
     if (stream) {
         const { readable, writable } = new TransformStream();
         const writer = writable.getWriter();
         const encoder = new TextEncoder();
         //拿到内容就转发
         (async () => {
-           
+
             for await (const item of processResponse(env, messages, upstreamResponse, apiKey)) {
                 await writer.write(encoder.encode(item));
             }
@@ -634,14 +936,14 @@ async function handleChatCompletions(request: any,env:Env) {
                 'Content-Type': 'text/event-stream',
                 'Cache-Control': 'no-cache',
                 'Connection': 'keep-alive',
-                
+
             }
         });
     }
-    //非流式响应
+
     else {
 
-        for await (const item of processResponse(env,messages, upstreamResponse, apiKey)) {}
+        for await (const item of processResponse(env, messages, upstreamResponse, apiKey)) { }
 
         console.log(`all_New_Text: ${all_New_Text}`)
         const responseJson = {
@@ -666,8 +968,19 @@ async function handleChatCompletions(request: any,env:Env) {
             },
             "system_fingerprint": null
         };
-        //all_New_Text = "" 
+        all_New_Text = "" //疑似生命周期内不会自动清除，清空累计的流式响应内容
         return new Response(JSON.stringify(responseJson), { headers: { 'Content-Type': 'application/json' } });
     }
+
+}
+
+async function handleModels() {
+
+    return new Response(JSON.stringify(fakemodelist), {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        status: 200,
+    })
 
 }
