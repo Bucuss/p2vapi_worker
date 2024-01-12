@@ -204,3 +204,4 @@ node_modules/
 .vscode/
 *.swp
 
+wrangler.toml
