@@ -1,0 +1,26 @@
+name = "pandorav2api"
+main = "src/p2vapi.ts"
+compatibility_date = "2023-12-06"
+
+# Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
+# Note: Use secrets to store sensitive data.
+# Docs: https://developers.cloudflare.com/workers/platform/environment-variables
+# vars:
+# BASE_URL:部署的pandora的域名地址
+# PROXY_API_PREFIX：pandora的proxy模式前缀
+# R2_DOMAIN：绑定的R2桶域名地址
+[vars]
+BASE_URL = "https://your-proxy-url.com"
+PROXY_API_PREFIX = "yourprefix"
+R2_DOMAIN ="https://your-r2-url.com"
+
+
+# Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
+# Docs: https://developers.cloudflare.com/r2/api/workers/workers-api-usage/
+# R2:
+# binding = 'R2buket' 绑定的R2桶变量名，不需要改
+# bucket_name：创建的R2桶自定义的名字
+[[r2_buckets]]
+binding = 'R2buket'
+bucket_name = 'your_r2_name'
+preview_bucket_name = ""
