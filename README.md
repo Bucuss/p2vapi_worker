@@ -33,6 +33,7 @@
    - 创建 R2: 访问 [Cloudflare R2 概览](https://dash.cloudflare.com/7c7d8f1ace797311e23742f30364704c/r2/overview)。
      ![image](https://github.com/palafin02back/p2vapi_worker/assets/155502697/ad1a649c-a9e2-490a-9f02-208273fbcacd)
 
+   - 新建或者修改 `wrangler.toml.example` 为 `wrangler.toml`
    - 编辑 `wrangler.toml` 文件，配置如下变量：
      - `BASE_URL`: 部署的 Pandora 的域名地址。
      - `PROXY_API_PREFIX`: Pandora 的 proxy 模式前缀。
